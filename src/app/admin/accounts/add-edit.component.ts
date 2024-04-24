@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -9,25 +10,49 @@ import { MustMatch } from '@app/_helpers';
 @Component({ templateUrl: 'add-edit.component.html' })
 export class AddEditComponent implements OnInit {
     form: FormGroup;
+=======
+import { Router, ActivatedRoute } from '@angular/ router';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { AccountService, AlertService } from '@app/_services';
+import { MustMatch } from '@app/_helpers';
+
+@Component ({ templateUrl: 'add-edit.component.html' })
+export class AddEditComponent implements OnInit {
+    form: UntypedFormGroup;
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
     id: string;
     isAddMode: boolean;
     loading = false;
     submitted = false;
 
     constructor(
+<<<<<<< HEAD
         private formBuilder: FormBuilder,
+=======
+        private formBuilder: UntypedFormBuilder,
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
     ) {}
 
+<<<<<<< HEAD
     ngOnInit() {
         this.id = this.route.snapshot.params['id'];
         this.isAddMode = !this.id;
 
         this.form = this.formBuilder.group({
             title: ['', Validators.required],
+=======
+    ngoninit() {
+        this. id = this.route.snapshot.params ['id']:
+        this. isAddMode = !this.id;
+
+        this. form = this.formBuilder.group ({
+            title: ['', Validators. required],
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
@@ -35,6 +60,7 @@ export class AddEditComponent implements OnInit {
             password: ['', [Validators.minLength(6), this.isAddMode ? Validators.required : Validators.nullValidator]],
             confirmPassword: ['']
         }, {
+<<<<<<< HEAD
             validator: MustMatch('password', 'confirmPassword')
         });
 
@@ -46,12 +72,28 @@ export class AddEditComponent implements OnInit {
     }
 
     // convenience getter for easy access to form fields
+=======
+            validator: MustMatch( 'password', 'confirmPassword' )
+        });
+
+        if (!this. isAddMode) {
+            this.accountService.getById(this.id)
+                .pipe (first())
+                .subscribe(x => this.form.patchValue(x));
+        }
+    }
+// convenience getter for easy access to form fields
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
     get f() { return this.form.controls; }
 
     onSubmit() {
         this.submitted = true;
 
+<<<<<<< HEAD
         // reset alerts on submit
+=======
+        //reset alerts on submit
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
         this.alertService.clear();
 
         // stop here if form is invalid
@@ -59,14 +101,22 @@ export class AddEditComponent implements OnInit {
             return;
         }
 
+<<<<<<< HEAD
         this.loading = true;
         if (this.isAddMode) {
+=======
+        this. loading = true;
+        if (this. isAddMode) {
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
             this.createAccount();
         } else {
             this.updateAccount();
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
     private createAccount() {
         this.accountService.create(this.form.value)
             .pipe(first())
@@ -74,6 +124,7 @@ export class AddEditComponent implements OnInit {
                 next: () => {
                     this.alertService.success('Account created successfully', { keepAfterRouteChange: true });
                     this.router.navigate(['../'], { relativeTo: this.route });
+<<<<<<< HEAD
                 },
                 error: error => {
                     this.alertService.error(error);
@@ -97,3 +148,28 @@ export class AddEditComponent implements OnInit {
             });
     }
 }
+=======
+            },
+            error: error => {
+                this.alertService.error(error);
+                this. loading = false;
+            }
+        });
+    }
+    private updateAccount() {
+        this.accountService.update(this.form.value)
+            .pipe(first())
+            .subscribe({
+                next: () => {
+                    this.alertService.success('Update Successful', { keepAfterRouteChange: true });
+                    this.router.navigate(['../..'], { relativeTo: this.route });
+            },
+            error: error => {
+                this.alertService.error(error);
+                this.loading = false;
+            }
+        });
+    }
+
+}
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455

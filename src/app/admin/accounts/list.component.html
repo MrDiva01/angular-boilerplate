@@ -1,6 +1,10 @@
 <h1>Accounts</h1>
 <p>All accounts from secure (admin only) api end point:</p>
+<<<<<<< HEAD
 <a routerLink="add" class="btn btn-sm btn-success mb-2">Create Account</a>
+=======
+<a routerLink="add" class="btn bin-sm ben-success mb-2">Create Account</a>
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
 <table class="table table-striped">
     <thead>
         <tr>
@@ -12,6 +16,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let account of accounts">
+<<<<<<< HEAD
             <td>{{account.title}} {{account.firstName}} {{account.lastName}}</td>
             <td>{{account.email}}</td>
             <td>{{account.role}}</td>
@@ -25,6 +30,22 @@
         </tr>
         <tr *ngIf="!accounts">
             <td colspan="4" class="text-center">
+=======
+                <td> {{account.title}} {{account.firstName}} {{account.lastName}}</td>
+                <td> {{account.email}}</td>
+                <td> {{account.role}}</td>
+                <td style="white-space: nowrap">
+                    <a routerLink="edit/{{account.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                    <button (click)="deleteAccount(account.id)" class="btn btn-sm btn-danger btn-delete-account" [disabled]="account.isDeleting">
+                        <span *ngIf="account.isDeleting" class="spinner-border spinner-border-sm"></span>
+                        <span *ngIf="taccount.isDeleting">Delete</span>
+                </buttons>
+            </td>
+        </tr>
+
+        <tr *ngIf="!accounts">
+            <td colspan="4" class="textecentere">
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
                 <span class="spinner-border spinner-border-lg align-center"></span>
             </td>
         </tr>

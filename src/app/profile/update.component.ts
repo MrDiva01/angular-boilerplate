@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+=======
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
 import { first } from 'rxjs/operators';
 
 import { AccountService, AlertService } from '@app/_services';
@@ -9,13 +13,21 @@ import { MustMatch } from '@app/_helpers';
 @Component({ templateUrl: 'update.component.html' })
 export class UpdateComponent implements OnInit {
     account = this.accountService.accountValue;
+<<<<<<< HEAD
     form: FormGroup;
+=======
+    form: UntypedFormGroup;
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
     loading = false;
     submitted = false;
     deleting = false;
 
     constructor(
+<<<<<<< HEAD
         private formBuilder: FormBuilder,
+=======
+        private formBuilder: UntypedFormBuilder,
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
@@ -35,16 +47,24 @@ export class UpdateComponent implements OnInit {
         });
     }
 
+<<<<<<< HEAD
     // convenience getter for easy access to form fields
+=======
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
     get f() { return this.form.controls; }
 
     onSubmit() {
         this.submitted = true;
 
+<<<<<<< HEAD
         // reset alerts on submit
         this.alertService.clear();
 
         // stop here if form is invalid
+=======
+        this.alertService.clear();
+
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
         if (this.form.invalid) {
             return;
         }

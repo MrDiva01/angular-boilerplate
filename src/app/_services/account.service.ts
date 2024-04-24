@@ -86,9 +86,13 @@ export class AccountService {
     update(id, params) {
         return this.http.put(`${baseUrl}/${id}`, params)
             .pipe(map((account: any) => {
+<<<<<<< HEAD
                 // update the current account if it was updated
                 if (account.id === this.accountValue.id) {
                     // publish updated account to subscribers
+=======
+                if (account.id === this.accountValue.id) {
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
                     account = { ...this.accountValue, ...account };
                     this.accountSubject.next(account);
                 }
@@ -99,12 +103,16 @@ export class AccountService {
     delete(id: string) {
         return this.http.delete(`${baseUrl}/${id}`)
             .pipe(finalize(() => {
+<<<<<<< HEAD
                 // auto logout if the logged in account was deleted
+=======
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
                 if (id === this.accountValue.id)
                     this.logout();
             }));
     }
 
+<<<<<<< HEAD
     // helper methods
 
     private refreshTokenTimeout;
@@ -117,6 +125,14 @@ export class AccountService {
         const expires = new Date(jwtToken.exp * 1000);
  
 
+=======
+    private refreshTokenTimeout;
+
+    private startRefreshTokenTimer() {
+        const jwtToken = JSON.parse(atob(this.accountValue.jwtToken.split('.')[1]));
+
+        const expires = new Date(jwtToken.exp * 1000);
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
         const timeout = expires.getTime() - Date.now() - (60 * 1000);
         this.refreshTokenTimeout = setTimeout(() => this.refreshToken().subscribe(), timeout);
     }

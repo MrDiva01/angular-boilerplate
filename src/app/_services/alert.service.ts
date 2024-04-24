@@ -11,7 +11,11 @@ export class AlertService {
 
     // enable subscribing to alerts observable
     onAlert(id = this.defaultId): Observable<Alert> {
+<<<<<<< HEAD
         return this.subject.asObservable().pipe(filter(x => x && x.id === id));
+=======
+        return this.subject.asObservable().pipe(filter(x => x.id === id));
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
     }
 
     // convenience methods
@@ -34,12 +38,20 @@ export class AlertService {
     // core alert method
     alert(alert: Alert) {
         alert.id = alert.id || this.defaultId;
+<<<<<<< HEAD
         alert.autoClose = (alert.autoClose === undefined ? true : alert.autoClose);
         this.subject.next(alert);
     }
 
     // clear alerts
     clear(id = this.defaultId) {
+=======
+        alert.autoClose = alert.autoClose === undefined ? true : alert.autoClose;
+        this.subject.next(alert);
+    }
+
+    clear(id =this.defaultId) {
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
         this.subject.next(new Alert({ id }));
     }
 }

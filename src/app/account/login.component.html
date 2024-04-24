@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h3 class="card-header">Login</h3>
 <div class="card-body">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -5,13 +6,26 @@
             <label>Email</label>
             <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+=======
+<h3 class="card-header"></h3>
+<div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.error}"/>
+            <div *ngIf="f.email.errors.required">Email is required</div>
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
                 <div *ngIf="f.email.errors.required">Email is required</div>
                 <div *ngIf="f.email.errors.email">Email is invalid</div>
             </div>
         </div>
         <div class="form-group">
             <label>Password</label>
+<<<<<<< HEAD
             <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+=======
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
             </div>
@@ -22,9 +36,12 @@
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Login
                 </button>
+<<<<<<< HEAD
                 <a routerLink="../register" class="btn btn-link">Register</a>
             </div>
             <div class="form-group col text-right">
+=======
+>>>>>>> 8737253b6f94c40d5e82e5e5bf8d234883a9f455
                 <a routerLink="../forgot-password" class="btn btn-link pr-0">Forgot Password?</a>
             </div>
         </div>

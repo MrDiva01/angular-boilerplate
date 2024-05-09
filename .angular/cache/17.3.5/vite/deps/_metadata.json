@@ -1,79 +1,97 @@
 {
-  "hash": "320a0693",
-  "configHash": "e98ca354",
-  "lockfileHash": "5cf769d1",
-  "browserHash": "4dc12567",
+  "hash": "8d8a3c7d",
+  "configHash": "dda21bc2",
+  "lockfileHash": "4b58d76b",
+  "browserHash": "9f0215ac",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "fcfa90a9",
+      "fileHash": "66f2ebf4",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "62ecdd63",
+      "fileHash": "0dbcea13",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "44ac0474",
+      "fileHash": "5544e25d",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "dcbc3c0c",
+      "fileHash": "ccf4ba3c",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "681772c7",
+      "fileHash": "98a895a8",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "9bafd396",
+      "fileHash": "40297999",
+      "needsInterop": false
+    },
+    "@fullcalendar/core": {
+      "src": "../../../../../node_modules/@fullcalendar/core/index.js",
+      "file": "@fullcalendar_core.js",
+      "fileHash": "95c61174",
+      "needsInterop": false
+    },
+    "@fullcalendar/daygrid": {
+      "src": "../../../../../node_modules/@fullcalendar/daygrid/index.js",
+      "file": "@fullcalendar_daygrid.js",
+      "fileHash": "056d9d2a",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/_esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "62d998bb",
+      "fileHash": "2d75ab68",
       "needsInterop": false
     },
     "rxjs/operators": {
       "src": "../../../../../node_modules/rxjs/_esm5/operators/index.js",
       "file": "rxjs_operators.js",
-      "fileHash": "b9ffde02",
+      "fileHash": "d266d445",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-OBBQR45Z": {
-      "file": "chunk-OBBQR45Z.js"
+    "chunk-U55ZOQDG": {
+      "file": "chunk-U55ZOQDG.js"
     },
-    "chunk-BCDCNVU3": {
-      "file": "chunk-BCDCNVU3.js"
+    "chunk-M2B67IR5": {
+      "file": "chunk-M2B67IR5.js"
     },
-    "chunk-HUMVYQPW": {
-      "file": "chunk-HUMVYQPW.js"
+    "chunk-SROPOT4J": {
+      "file": "chunk-SROPOT4J.js"
     },
-    "chunk-JKKXJQE6": {
-      "file": "chunk-JKKXJQE6.js"
+    "chunk-Z36ANMXA": {
+      "file": "chunk-Z36ANMXA.js"
     },
-    "chunk-YVETRARE": {
-      "file": "chunk-YVETRARE.js"
+    "chunk-SRDK2NZD": {
+      "file": "chunk-SRDK2NZD.js"
     },
-    "chunk-WERTOFX7": {
-      "file": "chunk-WERTOFX7.js"
+    "chunk-GK724PJ5": {
+      "file": "chunk-GK724PJ5.js"
     },
-    "chunk-QYISSQA4": {
-      "file": "chunk-QYISSQA4.js"
+    "chunk-UMOB4LYC": {
+      "file": "chunk-UMOB4LYC.js"
+    },
+    "chunk-K5J6TFSH": {
+      "file": "chunk-K5J6TFSH.js"
+    },
+    "chunk-J4B6MK7R": {
+      "file": "chunk-J4B6MK7R.js"
     }
   }
 }
